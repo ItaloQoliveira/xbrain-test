@@ -23,12 +23,9 @@ public class Sale {
     @Column(name = "value")
     private Double value;
 
-    @Column(name = "salesmanId")
-    private Integer salesmanId;
-
-    @Column(name = "salesmanName")
-    private String salesmanName;
-
+    @ManyToOne(cascade = CascadeType.MERGE, optional = false)
+    @JoinColumn(name = "salesmanId")
+    private Salesman salesman;
 
 
 }
